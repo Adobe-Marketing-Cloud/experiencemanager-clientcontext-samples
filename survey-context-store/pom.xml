@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.day.cq.personalization</groupId>
+    <artifactId>cq-personalization-surveycontextstore</artifactId>
+    <packaging>content-package</packaging>
+    <name>AEM Survey Context Store Sample Package</name>
+    <version>1.0.0-SNAPSHOT</version>
+    <description>Content package with the Survey Context Store Sample for Adobe CQ 5.6. </description>
+
+    <dependencies>
+    </dependencies>
+
+     <build>
+        <resources>
+            <resource>
+                <directory>${basedir}/jcr_root</directory>
+                <targetPath>.</targetPath>
+                <filtering>false</filtering>
+                <excludes>
+                    <exclude>**/.vlt</exclude>
+                    <exclude>**/.vltignore</exclude>
+                    <exclude>**/*.iml</exclude>
+                    <exclude>**/.classpath</exclude>
+                    <exclude>**/.project</exclude>
+                    <exclude>**/.settings/**</exclude>
+                    <exclude>**/.checkstyle</exclude>
+                    <exclude>**/.DS_Store</exclude>
+                    <exclude>**/target/**</exclude>
+                    <exclude>**/pom*</exclude>
+                    <exclude>**/META-INF/**</exclude>
+                    <exclude>**/.idea/**</exclude>
+                </excludes>
+            </resource>
+        </resources>
+
+        <plugins>
+            <plugin>
+                <groupId>com.day.jcr.vault</groupId>
+                <artifactId>maven-vault-plugin</artifactId>
+                <version>0.0.10</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <group>day_internal/presales</group>
+                    <requiresRoot>true</requiresRoot>
+                    <properties>
+                        <acHandling>overwrite</acHandling>
+                        <createdBy>Adobe Systems Incorporated</createdBy>
+                    </properties>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <artifactId>maven-resources-plugin</artifactId>
+                <!-- ensure that the empty directories are copied -->
+                <configuration>
+                    <includeEmptyDirs>true</includeEmptyDirs>
+                </configuration>
+
+                <executions>
+                    <execution>
+                        <id>copy-metainf-vault-resources</id>
+                        <phase>generate-resources</phase>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${project.build.directory}/vault-work/META-INF</outputDirectory>
+                            <resources>
+                                <resource>
+                                    <directory>${basedir}/META-INF</directory>
+                                    <filtering>false</filtering>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+
+        </plugins>
+    </build>
+
+</project>
+
+    
