@@ -1,0 +1,86 @@
+
+/*
+ * ***********************************************************************
+ * ADOBE CONFIDENTIAL
+ * ___________________
+ *
+ * Copyright 2011 Adobe Systems Incorporated
+ * All Rights Reserved.
+ *
+ * NOTICE:  All information contained herein is, and remains
+ * the property of Adobe Systems Incorporated and its suppliers,
+ * if any.  The intellectual and technical concepts contained
+ * herein are proprietary to Adobe Systems Incorporated and its
+ * suppliers and are protected by trade secret or copyright law.
+ * Dissemination of this information or reproduction of this material
+ * is strictly forbidden unless prior written permission is obtained
+ * from Adobe Systems Incorporated.
+ * ***********************************************************************
+ */
+
+.cq-clientcontext .cq-cc-customstore {
+    line-height: 23px;
+}
+
+.cq-clientcontext .cq-cc-customstore input[type=checkbox] {
+    display: none;
+}
+
+.cq-clientcontext .cq-cc-customstore label {
+    padding: 2px 5px;
+    margin: 2px 4px 2px 0px;
+    font-size: 12px;
+    border-radius: 5px;
+    display: inline-block;
+    background-color: #444;    
+    color: #ccc;
+}
+
+.cq-clientcontext .cq-cc-customstore label:hover {
+    background-color: #393939;
+}
+
+.cq-clientcontext .cq-cc-customstore label.checked {
+    background-color: black;  
+    color: white;
+}
+
+.cq-clientcontext .cq-cc-customstore label.checked:hover {
+    background-color: #222;
+}
+
+.cq-clientcontext .cq-cc-customstore label .toggle {
+    display: inline-block;
+    width: 16px;
+    background-color: #555;
+    height: 9px;
+    border-radius: 5px;
+    top: 1px;
+    margin-right: 5px;
+    border: 1px solid #777;
+    position: relative;
+} 
+
+.cq-clientcontext .cq-cc-customstore label .green, 
+.cq-clientcontext .cq-cc-customstore label .red {
+    background-color: #D00;
+    width: 9px;
+    height: 9px;
+    border-radius: 5px;
+    display: block;
+    float: right;
+}
+
+.cq-clientcontext .cq-cc-customstore label .green {
+    background-color: #0D0;
+    display: none;
+    float: left;
+}
+
+.cq-clientcontext .cq-cc-customstore label.checked .red {
+    display: none;
+}
+
+.cq-clientcontext .cq-cc-customstore label.checked .green {
+    display: block;
+}
