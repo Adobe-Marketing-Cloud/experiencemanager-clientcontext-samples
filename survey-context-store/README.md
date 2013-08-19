@@ -7,5 +7,4 @@ In the configuration dialog, you can use the following value for the feed URL:
 
 https://spreadsheets.google.com/feeds/cells/0AiT-6BvU6CoEdEd1eXo5OE91d3BzQTY5X0VwVUZuZ2c/od6/public/basic
 
-You can also create a survey response by filling in the form at https://docs.google.com/forms/d/1QN6PEO1Wl6I4VwI8GKDf-Mn0EfHFSVxw6v2EHQj_4O
-M/viewform and specifying the email address of one of the CQ demo users and the client context should pick up those values when you switch to that user.
+You can also create a survey response by filling in the form at https://docs.google.com/forms/d/1QN6PEO1Wl6I4VwI8GKDf-Mn0EfHFSVxw6v2EHQj_4OM/viewform and specifying the email address of one of the CQ demo users and the client context should pick up those values when you switch to that user.
