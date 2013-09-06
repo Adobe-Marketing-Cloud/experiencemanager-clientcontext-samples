@@ -90,11 +90,13 @@
 
     UserProperties userProperties = userResource != null ? upm.getUserProperties(userResource.adaptTo(Node.class)) : null;
 
+    log.info("Generating JSON for survey for user " + userProperties.getProperty("email", "", String.class));
+
     response.setContentType("text/javascript");
     response.setCharacterEncoding("utf-8");
 
-    out.print(request.getParameter("callback"));
-    out.print("(");
+	// out.print(request.getParameter("callback"));
+	// out.print("(");
 
     if( userProperties != null) {
         StringWriter sw = new StringWriter();
@@ -121,5 +123,5 @@
     } else {
         out.print("{}");
     }
-    out.print(")");
+	// out.print(")");
 %>

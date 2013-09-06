@@ -18,7 +18,11 @@
  */
 
 if (!CQ_Analytics.SurveyMgr) {
-    CQ_Analytics.SurveyMgr = CQ_Analytics.JSONPStore.registerNewInstance("survey");
+
+    console.debug("Registering new instance of SurveyMgr");
+    
+    CQ_Analytics.SurveyMgr = CQ_Analytics.PersistedJSONStore.registerNewInstance("survey", {});
+
 
     CQ_Analytics.CCM.addListener("configloaded", function() {
 
@@ -27,6 +31,7 @@ if (!CQ_Analytics.SurveyMgr) {
         CQ_Analytics.ProfileDataMgr.addListener("update", function() {
             var uid = CQ_Analytics.ProfileDataMgr.getProperty("authorizableId");
             if (uid != this.lastUid) {
+                console.debug("Firing update event");
                 this.fireEvent("update");
             }
         }, CQ_Analytics.SurveyMgr);
