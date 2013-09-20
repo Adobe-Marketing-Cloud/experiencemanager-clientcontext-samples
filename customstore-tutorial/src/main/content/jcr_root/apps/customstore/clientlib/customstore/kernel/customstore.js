@@ -36,12 +36,12 @@ if (!CQ_Analytics.CustomStoreMgr ) {
             try {
 
                 var object = CQ.shared.HTTP.eval(url);
-                if (object) {
-                    this.data = {};
-                    for (var d in object) {
-                        this.data[d] = object[d];
-                    }
-                }
+                if (object) { this.data = object; }
+                    //this.data = {};
+                    //for (var d in object) {
+                    //    this.data[d] = object[d];
+                    //}
+                //}
 
             } catch(error) {
                 console.log("Error", error);

@@ -46,20 +46,12 @@
         if (profile != null) {
 
             // here we simulate the result from a back-end system
-
-            w.key("AUTOMATICPAYMENTDEBIT");
-            w.object();
-            w.key("key").value("AUTOMATICPAYMENTDEBIT");
-            w.key("label").value("Automatic payment debit");
-            w.key("value").value("true");
-            w.endObject();
-
-            w.key("ONLINESTATEMENT");        
-			w.object();
-            w.key("key").value("ONLINESTATEMENT");
-            w.key("label").value("Online statement");
-            w.key("value").value("false");
-            w.endObject();
+            w.key("AUTOMATICPAYMENTDEBIT/key").value("AUTOMATICPAYMENTDEBIT");
+            w.key("AUTOMATICPAYMENTDEBIT/label").value("Automatic payment debit");
+            w.key("AUTOMATICPAYMENTDEBIT/value").value("true");
+            w.key("ONLINESTATEMENT/key").value("ONLINESTATEMENT");
+            w.key("ONLINESTATEMENT/label").value("Online statement");
+            w.key("ONLINESTATEMENT/value").value("false");
 
         }
 

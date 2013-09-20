@@ -83,11 +83,7 @@ if (CQ_Analytics.CustomStoreMgr ) {
 
         var data = CQ_Analytics.CustomStoreMgr.data;
         if (data) {
-            for (var i in data) {
-                if (typeof data[i] === 'object') {
-                    if (data[i].key === trait) data[i].value = newValue;
-                }
-            }
+            data[trait + '/value'] = newValue;
         }
     };
 
